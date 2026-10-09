@@ -1,0 +1,6 @@
+{
+  "name": "Mobarak Kibaida - Creative Design Services & Store Hub",
+  "description": "خدمات تصميم احترافية للمتاجر والهويات البصرية والفيديوهات بالذكاء الاصطناعي مع تحويل فوري لطلبات واتساب.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

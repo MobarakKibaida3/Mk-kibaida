@@ -1,0 +1,361 @@
+{
+  "currencies": {
+    "EGP": {
+      "code": "EGP",
+      "symbolAr": "ج.م",
+      "symbolEn": "EGP",
+      "nameAr": "جنيه مصري",
+      "nameEn": "Egyptian Pound",
+      "rateFromEGP": 1
+    },
+    "SAR": {
+      "code": "SAR",
+      "symbolAr": "ر.س",
+      "symbolEn": "SAR",
+      "nameAr": "ريال سعودي",
+      "nameEn": "Saudi Riyal",
+      "rateFromEGP": 0.076
+    },
+    "USD": {
+      "code": "USD",
+      "symbolAr": "$",
+      "symbolEn": "USD",
+      "nameAr": "دولار أمريكي",
+      "nameEn": "US Dollar",
+      "rateFromEGP": 0.020
+    }
+  },
+  "serviceQuestions": {
+    "logo-design": [
+      {
+        "id": "business_name",
+        "questionAr": "اسم البراند أو النشاط التجاري (عربي / إنجليزي)",
+        "questionEn": "Brand or Business Name (Arabic / English)",
+        "placeholderAr": "مثال: لمسة عصرية - Lamsa",
+        "required": true
+      },
+      {
+        "id": "brand_colors",
+        "questionAr": "الألوان المفضلة أو النمط البصري المرغوب",
+        "questionEn": "Preferred Colors or Visual Style",
+        "placeholderAr": "مثال: أسود وذهبي، ألوان هادئة، خط كوفي...",
+        "required": false
+      },
+      {
+        "id": "brand_niche",
+        "questionAr": "مجال العمل والجمهور المستهدف",
+        "questionEn": "Business Industry & Target Audience",
+        "placeholderAr": "مثال: متجر عطور فاخرة، ملابس، مطعم...",
+        "required": false
+      }
+    ],
+    "full-branding-package": [
+      {
+        "id": "brand_name",
+        "questionAr": "اسم البراند ورؤيتك الأساسية للهوية",
+        "questionEn": "Brand Name & Core Identity Vision",
+        "placeholderAr": "مثال: شركة تقنية تهدف لتقديم حلول سحابية",
+        "required": true
+      },
+      {
+        "id": "brand_assets_needed",
+        "questionAr": "العناصر الأهم بالنسبة لك في الهوية",
+        "questionEn": "Most Critical Branding Assets Needed",
+        "placeholderAr": "مثال: كروت، فولدرات، ورق رسمي، زي رسمي...",
+        "required": false
+      },
+      {
+        "id": "reference_brands",
+        "questionAr": "أسماء أو روابط براندات تعجبك هويتها كإلهام",
+        "questionEn": "Inspiration Brands or Reference Accounts",
+        "placeholderAr": "روابط إنستغرام أو مواقع مفضلة...",
+        "required": false
+      }
+    ],
+    "shopify-theme": [
+      {
+        "id": "store_niche",
+        "questionAr": "نوع المنتجات التي ستبيعها في متجر شوبيفاي",
+        "questionEn": "Type of Products You Will Sell on Shopify",
+        "placeholderAr": "مثال: أزياء نسائية، مستحضرات تجميل، إلكترونيات...",
+        "required": true
+      },
+      {
+        "id": "shopify_account",
+        "questionAr": "هل قمت بإنشاء حساب شوبيفاي وحجز الدومين بالفعل؟",
+        "questionEn": "Do you already have a Shopify account & domain?",
+        "placeholderAr": "نعم / لا / أحتاج مساعدة في إنشائه",
+        "required": false
+      },
+      {
+        "id": "inspiration_store",
+        "questionAr": "رابط متجر إلكتروني يعجبك تصميمه وسرعته كمرجع",
+        "questionEn": "Inspiration Store Link / Competitor Reference",
+        "placeholderAr": "https://example.com",
+        "required": false
+      }
+    ],
+    "turnkey-shopify-setup": [
+      {
+        "id": "store_name_products",
+        "questionAr": "اسم المتجر ونوعية المنتجات وعددها التقديري",
+        "questionEn": "Store Name & Estimated Number of Products",
+        "placeholderAr": "مثال: متجر إكسسوارات، حوالي 20 منتج",
+        "required": true
+      },
+      {
+        "id": "target_countries",
+        "questionAr": "الدول المستهدفة للبيع (مصر / السعودية / الإمارات...)",
+        "questionEn": "Target Countries for Sales (Egypt / KSA / UAE...)",
+        "placeholderAr": "مثال: السعودية والخليج",
+        "required": true
+      },
+      {
+        "id": "payment_shipping",
+        "questionAr": "بوابات الدفع وشركات الشحن المفضلة للربط",
+        "questionEn": "Preferred Payment Gateways & Courier Services",
+        "placeholderAr": "مثال: تابي، تمارا، ميسر، بوستا، أرامكس...",
+        "required": false
+      }
+    ],
+    "full-store-bundle": [
+      {
+        "id": "bundle_store_name",
+        "questionAr": "اسم المتجر الإلكتروني المراد تصميمه بالكامل",
+        "questionEn": "Name of the Store to be Built (Full Bundle)",
+        "placeholderAr": "اسم علامتك التجارية المقترح أو المسجل",
+        "required": true
+      },
+      {
+        "id": "bundle_target_market",
+        "questionAr": "السوق المستهدف والمنتجات الأساسية",
+        "questionEn": "Target Market & Main Products",
+        "placeholderAr": "مثال: السوق السعودي - دروبشيبينغ / علامة خاصة",
+        "required": true
+      },
+      {
+        "id": "bundle_special_features",
+        "questionAr": "أي ميزات خاصة ترغب بها (تطبيقات شحن، تحويل عملات، كوبونات)",
+        "questionEn": "Any specific features or custom apps needed",
+        "placeholderAr": "مثال: عروض حزم المنتجات، ربط بيكسل تيك توك وفيسبوك",
+        "required": false
+      }
+    ],
+    "ai-products-store": [
+      {
+        "id": "ai_product_types",
+        "questionAr": "نوع المنتجات الرقمية أو المادية المراد تصويرها بالذكاء الاصطناعي",
+        "questionEn": "Product types for AI generation / photography",
+        "placeholderAr": "مثال: زجاجات عطور، ساعات، أزياء، مجوهرات...",
+        "required": true
+      },
+      {
+        "id": "ai_background_style",
+        "questionAr": "بيئة وخلفية العرض المفضلة (استوديو فخم / طبيعة / رخام)",
+        "questionEn": "Preferred Scene & Backdrop (Luxury Studio / Nature / Marble)",
+        "placeholderAr": "مثال: منصة رخامية داكنة مع إضاءة سينمائية ذهبية",
+        "required": false
+      }
+    ],
+    "facebook-posts": [
+      {
+        "id": "social_platform",
+        "questionAr": "المنصات المستهدفة (فيسبوك / إنستغرام / تويتر / تيك توك)",
+        "questionEn": "Target Platforms (Facebook / Instagram / X / TikTok)",
+        "placeholderAr": "مثال: إنستغرام وفيسبوك",
+        "required": true
+      },
+      {
+        "id": "post_topics",
+        "questionAr": "طبيعة المنشورات (عروض ترويجية / تثقيفية / إطلاق منتجات)",
+        "questionEn": "Post topics (Promotional / Educational / Launch)",
+        "placeholderAr": "مثال: عروض وتخفيضات نهاية الموسم",
+        "required": false
+      }
+    ],
+    "facebook-covers": [
+      {
+        "id": "cover_text",
+        "questionAr": "العنوان والنصوص المطلوب كتابتها على الغلاف",
+        "questionEn": "Main Title & Copy to appear on the Cover",
+        "placeholderAr": "مثال: اسم المتجر + عبارة ترحيبية + رقم واتساب",
+        "required": true
+      },
+      {
+        "id": "cover_links",
+        "questionAr": "رابط الصفحة الحالية إن وُجدت",
+        "questionEn": "Current Page / Profile Link if available",
+        "placeholderAr": "https://facebook.com/...",
+        "required": false
+      }
+    ],
+    "ad-creatives": [
+      {
+        "id": "ad_objective",
+        "questionAr": "هدف الإعلان (مبيعات متجر / رسائل واتساب / تسجيل اهتمام)",
+        "questionEn": "Ad Campaign Objective (Sales / WhatsApp / Leads)",
+        "placeholderAr": "مثال: مبيعات متجر شوبيفاي",
+        "required": true
+      },
+      {
+        "id": "ad_call_to_action",
+        "questionAr": "النداء المباشر للإجراء (CTA) والعرض الترويجي",
+        "questionEn": "Call To Action & Promotional Offer",
+        "placeholderAr": "مثال: خصم 20% لفترة محدودة، اطلب الآن",
+        "required": false
+      }
+    ],
+    "animated-logo": [
+      {
+        "id": "logo_files_ready",
+        "questionAr": "هل ملف اللوجو الأصلي متوفر لديك بصيغة فيكتور (AI / SVG / PNG عالي)؟",
+        "questionEn": "Do you have vector logo files (AI / SVG / High-res PNG)?",
+        "placeholderAr": "نعم متوفر / أحتاج إعادة رسمه وتجهيزه للتحريك",
+        "required": true
+      },
+      {
+        "id": "animation_mood",
+        "questionAr": "طابع التحريك المرغوب (فخم وسلس / تقني وعصري / سريع وحيوي)",
+        "questionEn": "Desired Animation Style (Luxury Smooth / Tech / Energetic)",
+        "placeholderAr": "مثال: ظهور ذهبي ثلاثي الأبعاد مع إضاءة نيون",
+        "required": false
+      }
+    ],
+    "short-videos": [
+      {
+        "id": "video_topic",
+        "questionAr": "موضوع الفيديو والمنصة الأساسية (ريلز / تيك توك / شورتس)",
+        "questionEn": "Video Topic & Primary Platform (Reels / TikTok / Shorts)",
+        "placeholderAr": "مثال: ريلز إنستغرام لتعريف بمميزات المنتج الجديد",
+        "required": true
+      },
+      {
+        "id": "video_raw_assets",
+        "questionAr": "هل تملك لقطات مصورة أم ترغب في إنتاجها بالذكاء الاصطناعي؟",
+        "questionEn": "Do you have raw footage or need full AI generation?",
+        "placeholderAr": "مثال: سأرسل صور المنتج، وأحتاج فيديو احترافي بالذكاء الاصطناعي",
+        "required": false
+      }
+    ],
+    "product-short-10s": [
+      {
+        "id": "product_hero_feature",
+        "questionAr": "الميزة الرئيسية التي ترغب في إبرازها خلال الـ 10 ثوانٍ",
+        "questionEn": "Hero Feature to Highlight in the 10-second Short",
+        "placeholderAr": "مثال: جودة الخامة وسرعة الشحن وسعر العرض",
+        "required": true
+      },
+      {
+        "id": "hook_phrase",
+        "questionAr": "الجملة الافتتاحية الجاذبة (Hook) إن وُجدت",
+        "questionEn": "Opening Hook sentence if you have one",
+        "placeholderAr": "مثال: هل تبحث عن التميز؟ شاهد التفاصيل",
+        "required": false
+      }
+    ],
+    "ai-videos": [
+      {
+        "id": "ai_video_concept",
+        "questionAr": "الفكرة العامة والمشهد الخيالي المراد تنفيذه بالذكاء الاصطناعي",
+        "questionEn": "General concept and scenery for the AI video",
+        "placeholderAr": "مثال: ظهور المنتج في فضاء سينمائي أو بيئة مستقبلية",
+        "required": true
+      },
+      {
+        "id": "voiceover_needed",
+        "questionAr": "هل ترغب في إضافة تعليق صوتي (Voiceover) احترافي؟",
+        "questionEn": "Do you require professional voiceover (Arabic / English)?",
+        "placeholderAr": "نعم بصوت سعودي / نعم بصوت مصري / لا أحتاج صوت",
+        "required": false
+      }
+    ],
+    "default": [
+      {
+        "id": "project_name",
+        "questionAr": "اسم المشروع أو العلامة التجارية",
+        "questionEn": "Project or Brand Name",
+        "placeholderAr": "اسم مشروعك أو متجرك",
+        "required": true
+      },
+      {
+        "id": "special_notes",
+        "questionAr": "أهم تفصيلة أو متطلب أساسي تركز عليه في هذا الطلب",
+        "questionEn": "Most important requirement or preference",
+        "placeholderAr": "اكتب أي ملاحظة إضافية تهمك",
+        "required": false
+      }
+    ]
+  },
+  "paymentMethods": [
+    {
+      "id": "instapay",
+      "nameAr": "إنستاباي (InstaPay)",
+      "nameEn": "InstaPay Egypt",
+      "type": "instapay",
+      "badgeAr": "فوري ومباشر",
+      "badgeEn": "Instant Transfer",
+      "accountName": "",
+      "accountNumber": "",
+      "iban": "",
+      "bankName": "InstaPay Address (IPA)",
+      "instructionsAr": "يمكنك التحويل الفوري عبر تطبيق إنستاباي باستخدام عنوان الدفع أو رقم الهاتف المعتمد.",
+      "instructionsEn": "Transfer instantly using InstaPay application to our official payment address or phone."
+    },
+    {
+      "id": "bank_egypt",
+      "nameAr": "تحويل بنكي محلي (مصر)",
+      "nameEn": "Bank Wire Transfer (Egypt)",
+      "type": "bank",
+      "badgeAr": "معتمد رسمي",
+      "badgeEn": "Official Bank",
+      "accountName": "",
+      "accountNumber": "",
+      "iban": "",
+      "bankName": "",
+      "instructionsAr": "تحويل بنكي مباشر لحسابنا البنكي، مع إرسال إشعار التحويل عبر واتساب لتأكيد البدء.",
+      "instructionsEn": "Direct bank wire to our bank account. Send transfer receipt via WhatsApp to start."
+    },
+    {
+      "id": "saudi_gcc",
+      "nameAr": "حساب بنكي للخليج والسعودية",
+      "nameEn": "Saudi & GCC Bank Account",
+      "type": "bank",
+      "badgeAr": "للعملاء في السعودية والخليج",
+      "badgeEn": "KSA & Gulf Clients",
+      "accountName": "",
+      "accountNumber": "",
+      "iban": "",
+      "bankName": "",
+      "instructionsAr": "تحويل محلي سلس وسريع لعملائنا في المملكة العربية السعودية ودول مجلس التعاون.",
+      "instructionsEn": "Seamless local bank transfer for our clients in Saudi Arabia and the GCC."
+    },
+    {
+      "id": "wallets_egypt",
+      "nameAr": "محافظ كاش الإلكترونية (فودافون كاش / أورانج / وي)",
+      "nameEn": "Smart Cash Wallets (Vodafone / Orange / WE)",
+      "type": "wallet",
+      "badgeAr": "سريع 24/7",
+      "badgeEn": "Fast 24/7",
+      "accountName": "",
+      "accountNumber": "",
+      "iban": "",
+      "bankName": "Vodafone Cash / Mobile Wallet",
+      "instructionsAr": "تحويل كاش سريع ومتاح على مدار الساعة عبر محفظتك الإلكترونية.",
+      "instructionsEn": "Fast mobile wallet transfer available 24/7 from any local provider."
+    },
+    {
+      "id": "international",
+      "nameAr": "ويسترن يونيون / تحويل دولي",
+      "nameEn": "Western Union / International Wire",
+      "type": "international",
+      "badgeAr": "كافة دول العالم",
+      "badgeEn": "Worldwide",
+      "accountName": "",
+      "accountNumber": "",
+      "iban": "",
+      "bankName": "Western Union / Wire",
+      "instructionsAr": "للعملاء خارج مصر والخليج، يُتاح التحويل الدولي عبر ويسترن يونيون وتزويدك بالاسم فور الطلب.",
+      "instructionsEn": "For worldwide clients outside Egypt and GCC, receiver details are provided upon request."
+    }
+  ]
+}
