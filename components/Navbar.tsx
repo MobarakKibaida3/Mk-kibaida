@@ -11,9 +11,16 @@ interface NavbarProps {
   onToggleLang: () => void;
   currency: CurrencyCode;
   onCurrencyChange: (c: CurrencyCode) => void;
+  currentPage?: 'landing' | 'home';
 }
 
-export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange }: NavbarProps) {
+export default function Navbar({ 
+  lang, 
+  onToggleLang, 
+  currency, 
+  onCurrencyChange,
+  currentPage = 'home'
+}: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
@@ -40,7 +47,17 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
+  const navLinks = currentPage === 'landing' ? [
+    { href: '#services', label: lang === 'ar' ? 'الخدمات' : 'Services' },
+    { href: '#about', label: lang === 'ar' ? 'من نحن' : 'About' },
+    { href: '#why-us', label: lang === 'ar' ? 'مميزاتنا' : 'Why Us' },
+    { href: '#portfolio', label: lang === 'ar' ? 'أعمالنا' : 'Portfolio' },
+    { href: '#calculator', label: lang === 'ar' ? 'حاسبة التكلفة' : 'Calculator' },
+    { href: '#process', label: lang === 'ar' ? 'آلية العمل' : 'Workflow' },
+    { href: '#faq', label: lang === 'ar' ? 'الأسئلة الشائعة' : 'FAQ' },
+    { href: '/home', label: lang === 'ar' ? 'استكشف الموقع' : 'Explore Full Site' },
+  ] : [
+    { href: '/', label: lang === 'ar' ? 'نظرة عامة' : 'Overview' },
     { href: '#services', label: t.services },
     { href: '#featured-offer', label: t.featured },
     { href: '#portfolio', label: t.portfolio },
@@ -51,14 +68,18 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    setTimeout(() => {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      setMobileMenuOpen(false);
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      setMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -82,7 +103,7 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="flex items-center group cursor-pointer"
+              className="flex items-center group cursor-pointer min-w-0 shrink"
             >
               <MkLogo size="sm" showSubtitle={false} />
             </a>
@@ -101,10 +122,10 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
             </nav>
 
             {/* Zone 3: Primary Actions (Currency Switcher + Language Toggle + CTA) */}
-            <div className="flex items-center gap-1.5 sm:gap-3">
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
               
-              {/* Currency Switcher */}
-              <div className="flex items-center rounded-lg border border-neutral-800 bg-[#141414] p-0.5 text-[11px] font-bold">
+              {/* Currency Switcher: Full 3-buttons on tablet/desktop, compact cycle on mobile */}
+              <div className="hidden sm:flex items-center rounded-lg border border-neutral-800 bg-[#141414] p-0.5 text-[11px] font-bold">
                 {(['EGP', 'SAR', 'USD'] as CurrencyCode[]).map((c) => (
                   <button
                     key={c}
@@ -122,6 +143,19 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
                 ))}
               </div>
 
+              {/* Mobile Single Currency Cycle Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  const nextCurrency: CurrencyCode = currency === 'EGP' ? 'SAR' : currency === 'SAR' ? 'USD' : 'EGP';
+                  onCurrencyChange(nextCurrency);
+                }}
+                className="sm:hidden px-2 py-1 rounded-lg border border-neutral-800 bg-[#141414] text-[#E5C158] text-[11px] font-bold tracking-tight transition-all cursor-pointer"
+                title={lang === 'ar' ? 'تبديل العملة' : 'Switch Currency'}
+              >
+                {currency === 'EGP' ? (lang === 'ar' ? 'ج.م' : 'EGP') : currency === 'SAR' ? (lang === 'ar' ? 'ر.س' : 'SAR') : '$ USD'}
+              </button>
+
               {/* Language Switcher */}
               <button
                 type="button"
@@ -135,18 +169,19 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
 
               {/* Primary Order CTA - Desktop */}
               <a
-                href="#order-form"
+                href={currentPage === 'landing' ? '#services' : '#order-form'}
+                onClick={(e) => handleLinkClick(e, currentPage === 'landing' ? '#services' : '#order-form')}
                 className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-black bg-gradient-to-r from-[#E5C158] via-[#C9A227] to-[#A38018] hover:from-[#FFF099] hover:to-[#C9A227] rounded-lg shadow-[0_0_15px_rgba(201,162,39,0.3)] transition-all whitespace-nowrap active:scale-95 cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 mr-1.5 ml-1.5" />
-                {t.orderNow}
+                {currentPage === 'landing' ? (lang === 'ar' ? 'اطلب خدمتك الآن' : 'Order Service') : t.orderNow}
               </a>
 
               {/* Mobile Hamburger Button */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`lg:hidden p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-center ${
+                className={`lg:hidden p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-center shrink-0 ${
                   mobileMenuOpen
                     ? 'border-[#C9A227] bg-[#C9A227]/10 text-[#C9A227]'
                     : 'border-neutral-800 bg-[#141414] text-neutral-300 hover:text-white'
@@ -217,12 +252,12 @@ export default function Navbar({ lang, onToggleLang, currency, onCurrencyChange 
             {/* Mobile Actions: Order CTA & Direct WhatsApp */}
             <div className="pt-6 space-y-3">
               <a
-                href="#order-form"
-                onClick={(e) => handleLinkClick(e, '#order-form')}
+                href={currentPage === 'landing' ? '#services' : '#order-form'}
+                onClick={(e) => handleLinkClick(e, currentPage === 'landing' ? '#services' : '#order-form')}
                 className="w-full py-4 text-center text-sm font-extrabold text-black bg-gradient-to-r from-[#FFECA8] via-[#E5C158] to-[#C9A227] hover:from-white hover:to-[#E5C158] rounded-xl shadow-[0_0_25px_rgba(201,162,39,0.35)] flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>{t.orderNow}</span>
+                <span>{currentPage === 'landing' ? (lang === 'ar' ? 'اطلب خدمتك الآن' : 'Order Service Now') : t.orderNow}</span>
               </a>
 
               <a

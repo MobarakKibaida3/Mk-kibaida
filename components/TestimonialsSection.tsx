@@ -61,7 +61,7 @@ export default function TestimonialsSection({ lang }: TestimonialsSectionProps) 
   ];
 
   return (
-    <section className="py-24 bg-[#0A0A0A] relative">
+    <section className="py-20 sm:py-24 bg-[#0A0A0A] relative border-t border-neutral-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">

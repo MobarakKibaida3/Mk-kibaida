@@ -18,15 +18,18 @@ export default function MobileBottomBar({ lang }: MobileBottomBarProps) {
   );
 
   const handleOrderClick = () => {
-    const formElement = document.getElementById('order-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
+    const targetElement = 
+      document.getElementById('order-form') || 
+      document.getElementById('calculator') || 
+      document.getElementById('services');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div 
-      className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#C9A227]/30 px-3 py-2.5 flex items-center gap-2 shadow-[0_-8px_30px_rgba(0,0,0,0.9)] pb-[max(0.625rem,env(safe-area-inset-bottom))]"
+      className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#C9A227]/30 px-3 py-2 flex items-center gap-2 shadow-[0_-8px_30px_rgba(0,0,0,0.9)] pb-[max(0.625rem,env(safe-area-inset-bottom))] max-w-full overflow-hidden"
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       {/* Primary Order Button */}

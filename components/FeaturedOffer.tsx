@@ -72,14 +72,14 @@ export default function FeaturedOffer({
   const inclusions = [t.inc1, t.inc2, t.inc3, t.inc4, t.inc5];
 
   return (
-    <section id="featured-offer" className="py-20 bg-gradient-to-b from-[#0A0A0A] via-[#141414] to-[#0A0A0A] relative overflow-hidden">
+    <section id="featured-offer" className="py-16 sm:py-20 bg-gradient-to-b from-[#0A0A0A] via-[#141414] to-[#0A0A0A] relative overflow-hidden">
       {/* Golden Aura Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#C9A227]/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[800px] h-[320px] sm:h-[500px] bg-[#C9A227]/10 blur-[90px] sm:blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         
         {/* Container with Luxury Dual Golden Hairline Border */}
-        <div className="relative rounded-3xl bg-[#0D0D0D] border-2 border-[#C9A227]/50 shadow-[0_0_50px_rgba(201,162,39,0.18)] p-6 sm:p-10 lg:p-14 overflow-hidden">
+        <div className="relative rounded-2xl sm:rounded-3xl bg-[#0D0D0D] border-2 border-[#C9A227]/50 shadow-[0_0_50px_rgba(201,162,39,0.18)] p-4 sm:p-10 lg:p-14 overflow-hidden">
           
           {/* Top Marquee Ribbon */}
           <div className="absolute top-0 right-0 left-0 bg-gradient-to-r from-[#C9A227] via-[#F2D785] to-[#C9A227] py-2 px-4 text-center">

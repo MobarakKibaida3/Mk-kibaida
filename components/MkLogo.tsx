@@ -15,14 +15,14 @@ export default function MkLogo({ className = '', size = 'md', showSubtitle = tru
   };
 
   const textSizes = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-xl',
-    xl: 'text-2xl',
+    sm: 'text-xs sm:text-sm',
+    md: 'text-sm sm:text-base',
+    lg: 'text-lg sm:text-xl',
+    xl: 'text-xl sm:text-2xl',
   };
 
   return (
-    <div className={`flex items-center gap-3 select-none ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-3 select-none min-w-0 ${className}`}>
       {/* Royal Crown + MK Monogram Emblem */}
       <div className={`relative flex items-center justify-center rounded-xl bg-gradient-to-b from-[#1F1B12] to-[#0D0D0D] border border-[#C9A227]/40 shadow-[0_0_20px_rgba(201,162,39,0.15)] shrink-0 p-1.5 ${iconSizes[size]}`}>
         <svg
@@ -77,15 +77,15 @@ export default function MkLogo({ className = '', size = 'md', showSubtitle = tru
       </div>
 
       {/* Typography Brand Lockup */}
-      <div className="flex flex-col text-right">
+      <div className="flex flex-col text-start sm:text-right min-w-0">
         <span
-          className={`font-bold tracking-wider text-white font-serif uppercase ${textSizes[size]}`}
-          style={{ letterSpacing: '0.08em' }}
+          className={`font-bold tracking-wider text-white font-serif uppercase truncate max-w-[130px] xs:max-w-none ${textSizes[size]}`}
+          style={{ letterSpacing: '0.06em' }}
         >
           Mobarak Kibaida
         </span>
         {showSubtitle && (
-          <span className="text-[10px] md:text-xs tracking-widest text-[#C9A227] uppercase font-medium">
+          <span className="text-[10px] md:text-xs tracking-widest text-[#C9A227] uppercase font-medium truncate max-w-[130px] xs:max-w-none">
             Creative Design Studio
           </span>
         )}

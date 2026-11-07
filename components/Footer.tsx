@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import MkLogo from './MkLogo';
 import { translations } from '@/lib/translations';
@@ -60,13 +61,21 @@ export default function Footer({ lang }: FooterProps) {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="hover:text-[#C9A227] transition-colors">
-                  {lang === 'ar' ? 'الخدمات والأسعار' : 'Services & Rates'}
-                </a>
+                <Link href="/" className="hover:text-[#C9A227] transition-colors flex items-center justify-between">
+                  <span>{lang === 'ar' ? 'الخدمات الرقمية المتكاملة' : 'Digital Services Overview'}</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#C9A227]/10 text-[#C9A227] font-sans">
+                    {lang === 'ar' ? 'الرئيسية' : 'New'}
+                  </span>
+                </Link>
               </li>
               <li>
-                <a href="#featured-offer" className="hover:text-[#C9A227] transition-colors">
-                  {lang === 'ar' ? 'باقة المتجر الكامل (عرض 6,000)' : 'Turnkey Store Bundle'}
+                <Link href="/home" className="hover:text-[#C9A227] transition-colors">
+                  {lang === 'ar' ? 'متجر باقات شوبيفاي الكاملة' : 'Turnkey Store Packages'}
+                </Link>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#C9A227] transition-colors">
+                  {lang === 'ar' ? 'دليل الخدمات والأسعار' : 'Services & Rates'}
                 </a>
               </li>
               <li>
@@ -76,11 +85,11 @@ export default function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <a href="#calculator" className="hover:text-[#C9A227] transition-colors">
-                  {lang === 'ar' ? 'حاسبة الباقات' : 'Price Calculator'}
+                  {lang === 'ar' ? 'حاسبة التكاليف وعروض الأسعار' : 'Cost Calculator & Quotes'}
                 </a>
               </li>
               <li>
-                <a href="#tracker" className="hover:text-[#C9A227] transition-colors">
+                <a href="/home#tracker" className="hover:text-[#C9A227] transition-colors">
                   {lang === 'ar' ? 'تتبع حالة طلبك' : 'Track Order Status'}
                 </a>
               </li>

@@ -40,7 +40,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
   ];
 
   return (
-    <section id="process" className="py-20 bg-[#0E0E0E] relative border-t border-neutral-900">
+    <section id="process" className="py-16 sm:py-20 bg-[#0E0E0E] relative border-t border-neutral-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">

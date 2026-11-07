@@ -49,7 +49,7 @@ export default function PaymentMethodsSection({ lang }: PaymentMethodsSectionPro
   };
 
   return (
-    <section id="payment-methods" className="py-20 bg-[#070707] relative border-t border-neutral-900">
+    <section id="payment-methods" className="py-16 sm:py-20 bg-[#070707] relative border-t border-neutral-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

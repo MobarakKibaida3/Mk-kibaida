@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getOrders, saveOrder, updateOrderStatus } from '@/lib/storage';
+import { getOrders, saveOrder, updateOrder, updateOrderStatus } from '@/lib/storage';
 import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 export async function GET(req: NextRequest) {
@@ -111,17 +111,23 @@ ${saved.email ? `البريد: ${saved.email}\n` : ''}${saved.discountCode ? `ك
 export async function PATCH(req: NextRequest) {
   try {
     const body = await req.json();
-    const { orderId, status, key } = body;
+    const { orderId, status, quotedPrice, estimatedDelivery, adminNotes, key } = body;
 
     if (!isAuthorizedAdmin(req.headers, key)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    if (!orderId || !status) {
-      return NextResponse.json({ error: 'Missing parameters' }, { status: 400 });
+    if (!orderId) {
+      return NextResponse.json({ error: 'Missing orderId parameter' }, { status: 400 });
     }
 
-    const updated = await updateOrderStatus(orderId, status);
+    const updates: Record<string, unknown> = {};
+    if (status) updates.status = status;
+    if (quotedPrice !== undefined) updates.quotedPrice = Number(quotedPrice);
+    if (estimatedDelivery !== undefined) updates.estimatedDelivery = String(estimatedDelivery);
+    if (adminNotes !== undefined) updates.adminNotes = String(adminNotes);
+
+    const updated = await updateOrder(orderId, updates);
     if (!updated) {
       return NextResponse.json({ error: 'Order not found' }, { status: 404 });
     }

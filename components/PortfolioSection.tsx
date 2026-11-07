@@ -106,7 +106,7 @@ export default function PortfolioSection({ lang, onSelectService }: PortfolioSec
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-[#0A0A0A] relative">
+    <section id="portfolio" className="py-20 sm:py-24 bg-[#0A0A0A] relative border-t border-neutral-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -122,7 +122,7 @@ export default function PortfolioSection({ lang, onSelectService }: PortfolioSec
           </p>
 
           {/* Clean Segmented Filter Controls */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-xl bg-[#141414] border border-neutral-800">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-xl bg-[#141414] border border-neutral-800 max-w-full">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-lg text-xs font-medium transition-all cursor-pointer whitespace-nowrap ${

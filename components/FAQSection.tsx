@@ -51,7 +51,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[#0E0E0E] relative border-t border-neutral-900">
+    <section id="faq" className="py-16 sm:py-20 bg-[#0E0E0E] relative border-t border-neutral-900 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-14">

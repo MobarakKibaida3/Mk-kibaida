@@ -58,11 +58,11 @@ export default function OrderFormSection({
   const [copiedCode, setCopiedCode] = useState(false);
 
   // Sync selectedServiceId prop
-  useEffect(() => {
-    if (selectedServiceId && selectedServiceId !== serviceId) {
-      setServiceId(selectedServiceId);
-    }
-  }, [selectedServiceId]);
+  const [prevSelectedProp, setPrevSelectedProp] = useState(selectedServiceId);
+  if (selectedServiceId && selectedServiceId !== prevSelectedProp) {
+    setPrevSelectedProp(selectedServiceId);
+    setServiceId(selectedServiceId);
+  }
 
   const currentService = services.find((s) => s.id === serviceId) || services[0];
   const servicePriceEGP = currentService?.price || 0;
@@ -156,11 +156,6 @@ export default function OrderFormSection({
         orderCode: data.order.orderCode,
         whatsappUrl: data.whatsappUrl,
       });
-
-      // Automatically launch WhatsApp in new tab
-      if (data.whatsappUrl) {
-        window.open(data.whatsappUrl, '_blank', 'noopener,noreferrer');
-      }
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'حدث خطأ أثناء إرسال الطلب، يرجى المحاولة ثانية';
       setErrorMsg(message);
@@ -189,7 +184,7 @@ export default function OrderFormSection({
   ];
 
   return (
-    <section id="order-form" className="py-24 bg-[#0A0A0A] relative">
+    <section id="order-form" className="py-20 sm:py-24 bg-[#0A0A0A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -576,14 +571,14 @@ export default function OrderFormSection({
             </h3>
 
             <p className="text-xs sm:text-sm text-neutral-300 mb-6 leading-relaxed">
-              {sm.subtitle}
+              {sm.instruction}
             </p>
 
             {/* Order Code Highlight */}
             <div className="p-4 rounded-2xl bg-[#0A0A0A] border border-[#C9A227]/40 mb-6 flex items-center justify-between">
               <div className="text-start">
                 <span className="text-[10px] text-neutral-400 uppercase tracking-wider block">
-                  {sm.orderCodeLabel}
+                  {sm.orderCode}
                 </span>
                 <span className="text-xl font-black font-mono text-[#E5C158]">
                   #{successOrder.orderCode}
@@ -595,7 +590,7 @@ export default function OrderFormSection({
                 className="px-3 py-1.5 rounded-lg bg-[#1F1F1F] hover:bg-[#2A2A2A] text-neutral-300 text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 {copiedCode ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedCode ? sm.codeCopied : sm.copyCode}</span>
+                <span>{copiedCode ? sm.copied : sm.copyCode}</span>
               </button>
             </div>
 
@@ -608,7 +603,7 @@ export default function OrderFormSection({
                 className="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(37,211,102,0.4)] transition-all active:scale-95"
               >
                 <MessageCircle className="w-5 h-5 fill-black" />
-                <span>{sm.openWaBtn}</span>
+                <span>{sm.openWhatsApp}</span>
               </a>
 
               <button
@@ -616,7 +611,7 @@ export default function OrderFormSection({
                 onClick={() => setSuccessOrder(null)}
                 className="w-full py-2.5 text-xs text-neutral-400 hover:text-white transition-colors cursor-pointer"
               >
-                {sm.closeBtn}
+                {lang === 'ar' ? 'إغلاق' : 'Close'}
               </button>
             </div>
 

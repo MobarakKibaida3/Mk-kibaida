@@ -1,0 +1,480 @@
+[
+  {
+    "serviceId": "graphic-design-branding",
+    "nameAr": "تصميم جرافيك وهوية بصرية",
+    "nameEn": "Graphic Design and Branding",
+    "iconName": "Palette",
+    "mode": "estimate",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 2500,
+    "hasUnits": true,
+    "unitType": "items",
+    "unitLabelAr": "عنصر تصميمي / ملحق",
+    "unitLabelEn": "Design Asset / Collateral",
+    "baseUnitsIncluded": 3,
+    "pricePerAdditionalUnit": 350,
+    "minUnits": 1,
+    "maxUnits": 20,
+    "features": [
+      {
+        "id": "vector-source-files",
+        "nameAr": "تسليم الملفات المصدرية المفتوحة (AI / SVG / EPS)",
+        "nameEn": "Editable Vector Source Files (AI / SVG / EPS)",
+        "price": 500
+      },
+      {
+        "id": "brand-guidelines-booklet",
+        "nameAr": "كتيب إرشادات الهوية البصرية (Brand Guidelines PDF)",
+        "nameEn": "Comprehensive Brand Identity Guidelines Booklet",
+        "price": 900
+      },
+      {
+        "id": "3d-mockup-pack",
+        "nameAr": "حزمة موك أب ثلاثية الأبعاد للعرض التسويقي الفاخر",
+        "nameEn": "3D Photorealistic Mockup Presentation Pack",
+        "price": 600
+      },
+      {
+        "id": "social-media-kit",
+        "nameAr": "قوالب شبكات التواصل (أغلفة + هايلایت + منشورات)",
+        "nameEn": "Social Media Branding Kit (Covers + Highlights + Posts)",
+        "price": 750
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — هوية واضحة ومباشرة",
+        "nameEn": "Standard — Clean & Direct",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — عناصر بصرية غنية وتفاصيل مخصصة",
+        "nameEn": "Advanced — Rich Visual System",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "فاخر ملكي — دراسة سوقية متعمقة وتطبيقات شاملة",
+        "nameEn": "Enterprise — Luxury System & Custom Typography",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [
+      {
+        "id": "rush-48h",
+        "nameAr": "تسليم عاجل خلال 48 ساعة فقط",
+        "nameEn": "Priority Rush Delivery within 48 Hours",
+        "price": 800
+      },
+      {
+        "id": "unlimited-revisions",
+        "nameAr": "باقة تعديلات مفتوحة حتى الرضا التام",
+        "nameEn": "Extended Unlimited Revisions Assurance",
+        "price": 500
+      }
+    ],
+    "discountPercentage": 10
+  },
+  {
+    "serviceId": "website-design-dev",
+    "nameAr": "تصميم وتطوير المواقع الإلكترونية",
+    "nameEn": "Website Design and Development",
+    "iconName": "Globe",
+    "mode": "estimate",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 5000,
+    "hasUnits": true,
+    "unitType": "pages",
+    "unitLabelAr": "صفحة ويب",
+    "unitLabelEn": "Website Page",
+    "baseUnitsIncluded": 3,
+    "pricePerAdditionalUnit": 600,
+    "minUnits": 1,
+    "maxUnits": 25,
+    "features": [
+      {
+        "id": "multilingual-support",
+        "nameAr": "دعم ثنائي اللغة كامل مع RTL (عربي / إنجليزي)",
+        "nameEn": "Full Bilingual Support with RTL & LTR",
+        "price": 1200
+      },
+      {
+        "id": "custom-animations",
+        "nameAr": "تأثيرات حركة تفاعلية فاخرة وانتقالات سينمائية",
+        "nameEn": "Bespoke Micro-Interactions & Scroll Animations",
+        "price": 900
+      },
+      {
+        "id": "advanced-seo-setup",
+        "nameAr": "تهيئة متقدمة لمحركات البحث وسرعة جوجل 95+",
+        "nameEn": "Advanced SEO & Google PageSpeed 95+ Tuning",
+        "price": 800
+      },
+      {
+        "id": "blog-cms-integration",
+        "nameAr": "نظام مدونة وإدارة مقالات سهل الاستخدام",
+        "nameEn": "Dynamic Blog / CMS Publishing System",
+        "price": 950
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — موقع تعريفي أنيق ومتجاوب",
+        "nameEn": "Standard — Modern Responsive Showcase",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — صفحات هبوط متعددة وديناميكية عالية",
+        "nameEn": "Advanced — Multi-page & Dynamic Components",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "مؤسسي — أداء برمجي مخصص وأنظمة استعلام معقدة",
+        "nameEn": "Enterprise — Bespoke Architecture & Custom APIs",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [
+      {
+        "id": "priority-launch",
+        "nameAr": "إطلاق سريع خلال 72 ساعة",
+        "nameEn": "Priority Fast-Track Launch (72h)",
+        "price": 1500
+      },
+      {
+        "id": "ongoing-maintenance-3m",
+        "nameAr": "صيانة ودعم فني ممتد لمدة 3 أشهر",
+        "nameEn": "3-Month Proactive Maintenance & Backup",
+        "price": 1200
+      }
+    ],
+    "discountPercentage": 10
+  },
+  {
+    "serviceId": "shopify-store-dev",
+    "nameAr": "تطوير ومتاجر شوبيفاي",
+    "nameEn": "Shopify Store Development",
+    "iconName": "ShoppingBag",
+    "mode": "estimate",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 4500,
+    "hasUnits": true,
+    "unitType": "pages",
+    "unitLabelAr": "صفحة / تصنيف رئيسي",
+    "unitLabelEn": "Page / Collection",
+    "baseUnitsIncluded": 4,
+    "pricePerAdditionalUnit": 500,
+    "minUnits": 1,
+    "maxUnits": 30,
+    "features": [
+      {
+        "id": "payment-gateways-gcc",
+        "nameAr": "ربط بوابات الدفع (تابي، تمارا، ميسر، بوستا، باي موب)",
+        "nameEn": "Payment Gateway Setup (Tabby, Tamara, Paymob, Moyasar)",
+        "price": 900
+      },
+      {
+        "id": "shipping-courier-api",
+        "nameAr": "ربط شركات الشحن والتوصيل المحلي والخليجي",
+        "nameEn": "Automated Courier & Shipping API Integration",
+        "price": 750
+      },
+      {
+        "id": "upsell-bundle-apps",
+        "nameAr": "تطبيقات زيادة متوسط قيمة الطلب (Upsell & Bundles)",
+        "nameEn": "High-Converting Upsell & Product Bundle Suite",
+        "price": 850
+      },
+      {
+        "id": "marketing-pixels",
+        "nameAr": "ربط بيكسل تيك توك، سناب شات، وفيسبوك بدقة CAPI",
+        "nameEn": "Complete Ad Tracking Pixels with Conversions API",
+        "price": 600
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — متجر منتج واحد أو عدد محدود من المنتجات",
+        "nameEn": "Standard — Single Product or Niche Catalog",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — متجر متعدد التصنيفات مع عروض وحزم",
+        "nameEn": "Advanced — Multi-Category Catalog & Custom Badges",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "شامل — متجر دروبشيبينغ أو براند خاص بمواصفات خاصة",
+        "nameEn": "Enterprise — Full Brand Ecosystem with Custom Liquid",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [
+      {
+        "id": "rush-store-launch",
+        "nameAr": "تجهيز وتسليم المتجر خلال 4 أيام عمل",
+        "nameEn": "Express Store Launch in 4 Business Days",
+        "price": 1400
+      },
+      {
+        "id": "staff-training-session",
+        "nameAr": "جلسة تدريب مرئية مسجلة لإدارة المنتجات والطلبات",
+        "nameEn": "1-on-1 Recorded Admin & Order Fulfillment Training",
+        "price": 600
+      }
+    ],
+    "discountPercentage": 10
+  },
+  {
+    "serviceId": "ai-solutions",
+    "nameAr": "حلول الذكاء الاصطناعي",
+    "nameEn": "AI Solutions",
+    "iconName": "Sparkles",
+    "mode": "hybrid",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 3500,
+    "hasUnits": true,
+    "unitType": "models",
+    "unitLabelAr": "صورة / نموذج منتج بالذكاء الاصطناعي",
+    "unitLabelEn": "AI Visual Concept / Model",
+    "baseUnitsIncluded": 5,
+    "pricePerAdditionalUnit": 300,
+    "minUnits": 1,
+    "maxUnits": 50,
+    "features": [
+      {
+        "id": "8k-photorealistic-renders",
+        "nameAr": "توليد صور واقعية استثنائية بدقة 8K مع معالجة إضاءة",
+        "nameEn": "8K Ultra-realistic Studio Lighting & Reflections",
+        "price": 800
+      },
+      {
+        "id": "ai-support-chatbot",
+        "nameAr": "روبوت محادثة ذكي ومساعد واتساب مدرب على منتجاتك",
+        "nameEn": "Custom Trained AI WhatsApp & Web Assistant",
+        "price": 2200
+      },
+      {
+        "id": "automated-copy-generator",
+        "nameAr": "توليد نصوص إعلانية ووصف منتجات مقنع تلقائياً",
+        "nameEn": "Automated SEO Product Description & Ad Copy Engine",
+        "price": 900
+      },
+      {
+        "id": "ai-video-shorts",
+        "nameAr": "فيديو ترويجي قصير بالذكاء الاصطناعي مع تعليق صوتي",
+        "nameEn": "AI Promotional Short Video with Synthetic Voiceover",
+        "price": 1200
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — توليد صور منتجات احترافية في بيئات استوديو",
+        "nameEn": "Standard — Clean Studio Product Backdrops",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — دمج مع نماذج بشرية وتخصيص هوية العلامة",
+        "nameEn": "Advanced — Human Models & Contextual Lifestyle Scenes",
+        "multiplier": 1.3
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "مؤسسي — تدريب نموذج ذكاء اصطناعي خاص (LoRA) بالبراند",
+        "nameEn": "Enterprise — Fine-Tuned Custom LoRA Model for Brand",
+        "multiplier": 1.6
+      }
+    ],
+    "additionalServices": [
+      {
+        "id": "ai-monthly-updates",
+        "nameAr": "تحديث شهري لصور ومطالبات الذكاء الاصطناعي",
+        "nameEn": "Monthly AI Prompts & Visual Refresh Package",
+        "price": 1000
+      }
+    ],
+    "discountPercentage": 10
+  },
+  {
+    "serviceId": "digital-marketing",
+    "nameAr": "التسويق الرقمي",
+    "nameEn": "Digital Marketing",
+    "iconName": "Share2",
+    "mode": "estimate",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 3000,
+    "hasUnits": true,
+    "unitType": "campaigns",
+    "unitLabelAr": "حملة / منصة إعلانية",
+    "unitLabelEn": "Campaign / Ad Platform",
+    "baseUnitsIncluded": 1,
+    "pricePerAdditionalUnit": 750,
+    "minUnits": 1,
+    "maxUnits": 6,
+    "features": [
+      {
+        "id": "persuasive-ad-copywriting",
+        "nameAr": "كتابة نصوص إعلانية مقنعة مستهدفة للتحويل العالي",
+        "nameEn": "High-Converting Persuasive Ad Copywriting",
+        "price": 600
+      },
+      {
+        "id": "custom-ad-visuals-set",
+        "nameAr": "تصميم 6 بوسترات إعلانية مخصصة بحجم القصة والمنشور",
+        "nameEn": "Set of 6 Tailored Ad Creatives (Story & Feed)",
+        "price": 1000
+      },
+      {
+        "id": "audience-research-deep",
+        "nameAr": "دراسة متعمقة للجمهور المستهدف والمنافسين في السوق",
+        "nameEn": "In-Depth Target Audience & Competitor Matrix",
+        "price": 700
+      },
+      {
+        "id": "biweekly-performance-audit",
+        "nameAr": "تقرير دوري لتحليل تكلفة الاكتساب وتطوير الأداء (ROAS)",
+        "nameEn": "Bi-weekly ROI/ROAS Performance & Optimization Audit",
+        "price": 500
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — حملة إطلاق سريعة على منصة واحدة",
+        "nameEn": "Standard — Single Platform Launch",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — حملات متعددة مع إعادة استهداف (Retargeting)",
+        "nameEn": "Advanced — Multi-Funnel & Retargeting Campaigns",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "شامل — خطة تسويقية متكاملة مع قنوات متعددة",
+        "nameEn": "Enterprise — Omnichannel Growth Strategy",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [
+      {
+        "id": "ab-testing-package",
+        "nameAr": "إجراء اختبارات A/B لعناوين وصور متعددة",
+        "nameEn": "Rigorous A/B Split Testing Package",
+        "price": 650
+      }
+    ],
+    "discountPercentage": 10
+  },
+  {
+    "serviceId": "automation-integrations",
+    "nameAr": "الأتمتة والربط التقني",
+    "nameEn": "Automation and System Integrations",
+    "iconName": "Layers",
+    "mode": "quotation",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 0,
+    "hasUnits": false,
+    "baseUnitsIncluded": 0,
+    "pricePerAdditionalUnit": 0,
+    "minUnits": 1,
+    "maxUnits": 10,
+    "features": [
+      {
+        "id": "crm-sync-auto",
+        "nameAr": "مزامنة العملاء الفورية مع CRM (HubSpot / Zoho / Sheets)",
+        "nameEn": "Instant CRM Customer Synchronization",
+        "price": 0
+      },
+      {
+        "id": "whatsapp-auto-notifications",
+        "nameAr": "إشعارات واتساب تلقائية عند تأكيد وتحديث الطلبات",
+        "nameEn": "Automated WhatsApp Order & Lead Status Alerts",
+        "price": 0
+      },
+      {
+        "id": "accounting-erp-hook",
+        "nameAr": "ربط الفواتير والمدفوعات بأنظمة المحاسبة السحابية",
+        "nameEn": "Automated Cloud Accounting & Invoicing Webhooks",
+        "price": 0
+      }
+    ],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "قياسي — مسار أتمتة مباشر بين منصتين",
+        "nameEn": "Standard — Direct 2-App Integration Pipeline",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "متقدم — شروط تفريعية وفلاتر بيانات متعددة",
+        "nameEn": "Advanced — Multi-Step Logic with Data Filters",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "مؤسسي — ربط قواعد بيانات ومزامنة ذاتية ثنائية الاتجاه",
+        "nameEn": "Enterprise — Bidirectional Sync & Custom Webhooks",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [],
+    "discountPercentage": 0
+  },
+  {
+    "serviceId": "custom-services",
+    "nameAr": "خدمات مخصصة وأخرى",
+    "nameEn": "Other / Custom Services",
+    "iconName": "SlidersHorizontal",
+    "mode": "quotation",
+    "enabled": true,
+    "currency": "EGP",
+    "basePrice": 0,
+    "hasUnits": false,
+    "baseUnitsIncluded": 0,
+    "pricePerAdditionalUnit": 0,
+    "minUnits": 1,
+    "maxUnits": 10,
+    "features": [],
+    "complexityOptions": [
+      {
+        "id": "standard",
+        "nameAr": "طلب محدد ونطاق عمل واضح",
+        "nameEn": "Specific Scope & Defined Deliverables",
+        "multiplier": 1.0
+      },
+      {
+        "id": "advanced",
+        "nameAr": "مشروع مركب يتطلب أبحاث وتكامل حلول",
+        "nameEn": "Complex Multi-Discipline Requirements",
+        "multiplier": 1.25
+      },
+      {
+        "id": "enterprise",
+        "nameAr": "حل مخصص متكامل على مستوى المؤسسات",
+        "nameEn": "Enterprise Custom Implementation",
+        "multiplier": 1.5
+      }
+    ],
+    "additionalServices": [],
+    "discountPercentage": 0
+  }
+]

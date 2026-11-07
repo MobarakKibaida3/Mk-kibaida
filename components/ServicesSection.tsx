@@ -105,7 +105,7 @@ export default function ServicesSection({
   };
 
   return (
-    <section id="services" className="py-24 bg-[#0A0A0A] relative">
+    <section id="services" className="py-20 sm:py-24 bg-[#0A0A0A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -164,10 +164,10 @@ export default function ServicesSection({
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             
             {/* Category Segmented Control */}
-            <div className="inline-flex p-1.5 rounded-xl bg-[#141414] border border-neutral-800 self-center sm:self-auto">
+            <div className="flex flex-wrap justify-center sm:inline-flex p-1 sm:p-1.5 rounded-xl bg-[#141414] border border-neutral-800 self-center sm:self-auto max-w-full gap-1">
               <button
                 onClick={() => setActiveTab('core')}
-                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'core'
                     ? 'bg-gradient-to-r from-[#E5C158] to-[#C9A227] text-black shadow-md'
                     : 'text-neutral-400 hover:text-white'
@@ -177,7 +177,7 @@ export default function ServicesSection({
               </button>
               <button
                 onClick={() => setActiveTab('extended')}
-                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'extended'
                     ? 'bg-gradient-to-r from-[#E5C158] to-[#C9A227] text-black shadow-md'
                     : 'text-neutral-400 hover:text-white'
@@ -187,7 +187,7 @@ export default function ServicesSection({
               </button>
               <button
                 onClick={() => setActiveTab('all')}
-                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'all'
                     ? 'bg-gradient-to-r from-[#E5C158] to-[#C9A227] text-black shadow-md'
                     : 'text-neutral-400 hover:text-white'

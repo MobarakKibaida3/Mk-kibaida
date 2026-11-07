@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import ServicesSection from '@/components/ServicesSection';
-import FeaturedOffer from '@/components/FeaturedOffer';
-import PriceCalculator from '@/components/PriceCalculator';
+import ServicesOverviewHero from '@/components/ServicesOverviewHero';
+import ServicesSixGrid from '@/components/ServicesSixGrid';
+import AboutAgencySection from '@/components/AboutAgencySection';
+import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import PortfolioSection from '@/components/PortfolioSection';
+import PriceCalculator from '@/components/PriceCalculator';
 import ProcessSection from '@/components/ProcessSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
-import OrderFormSection from '@/components/OrderFormSection';
-import OrderTracker from '@/components/OrderTracker';
-import PaymentMethodsSection from '@/components/PaymentMethodsSection';
+import ContactWhatsAppSection from '@/components/ContactWhatsAppSection';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import MobileBottomBar from '@/components/MobileBottomBar';
@@ -20,39 +18,22 @@ import ExitIntentModal from '@/components/ExitIntentModal';
 import { Language, ServiceItem, CurrencyCode } from '@/lib/types';
 import initialServicesData from '@/data/services.json';
 
-export default function HomePage() {
+export default function ServicesOverviewPage() {
   const [lang, setLang] = useState<Language>('ar');
   const [currency, setCurrency] = useState<CurrencyCode>('EGP');
   const [services, setServices] = useState<ServiceItem[]>(initialServicesData as ServiceItem[]);
-  const [selectedServiceId, setSelectedServiceId] = useState<string>('full-store-bundle');
 
-  // Enforce starting at the very top (Hero section) on load or refresh
+  // Enforce starting at the top on initial load or refresh safely
   useEffect(() => {
-    // 1. Disable browser scroll restoration
-    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-
-    // 2. Ignore and strip any URL hash on initial page load
-    if (typeof window !== 'undefined' && window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
-
-    // 3. Scroll to absolute top immediately and safeguard against subsequent layout calculations
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-
-      const raf = requestAnimationFrame(() => {
+    try {
+      if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      if (typeof window !== 'undefined') {
         window.scrollTo(0, 0);
-      });
-      const timer = setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 50);
-
-      return () => {
-        cancelAnimationFrame(raf);
-        clearTimeout(timer);
-      };
+      }
+    } catch {
+      // Ignore iframe environment restrictions
     }
   }, []);
 
@@ -83,88 +64,71 @@ export default function HomePage() {
   };
 
   const handleSelectService = (serviceId: string) => {
-    setSelectedServiceId(serviceId);
+    const calcSection = document.getElementById('calculator');
+    if (calcSection) {
+      calcSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
-  const featuredService = services.find((s) => s.id === 'full-store-bundle');
-
   return (
-    <div className={`min-h-screen bg-[#0A0A0A] text-white flex flex-col pb-16 sm:pb-0 ${lang === 'ar' ? 'font-sans' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-[#0A0A0A] text-white flex flex-col pb-16 sm:pb-0 font-sans w-full max-w-full overflow-x-hidden`}>
       
-      {/* Sticky Luxury Navbar with Currency & Language Switchers */}
+      {/* Sticky Luxury Navbar configured for the Services Landing Page */}
       <Navbar
         lang={lang}
         onToggleLang={handleToggleLang}
         currency={currency}
         onCurrencyChange={setCurrency}
+        currentPage="landing"
       />
 
-      <main className="flex-1">
-        {/* 1. Hero Section */}
-        <Hero lang={lang} />
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
+        {/* 1. New Services Overview Hero with requested copy and CTAs */}
+        <ServicesOverviewHero lang={lang} />
 
-        {/* 2. Core & Extended Services Section with Search & Currency */}
-        <ServicesSection
-          lang={lang}
-          services={services}
-          selectedServiceId={selectedServiceId}
-          onSelectService={handleSelectService}
+        {/* 2. Specialized 6 Core Services Section with benefits and CTAs */}
+        <ServicesSixGrid 
+          lang={lang} 
           currency={currency}
+          onSelectServiceForCalculator={handleSelectService}
         />
 
-        {/* 3. Limited-Time Featured Offer (Dynamic Currency) */}
-        <FeaturedOffer
-          lang={lang}
-          onSelectService={handleSelectService}
-          featuredService={featuredService}
-          currency={currency}
-        />
+        {/* 3. About the Business & Founding Vision */}
+        <AboutAgencySection lang={lang} />
 
-        {/* 4. Portfolio & Proven Case Studies */}
+        {/* 4. Why Choose Our Services (6 Core Pillars) */}
+        <WhyChooseUsSection lang={lang} />
+
+        {/* 5. Selected Portfolio Projects (Real, existing case studies) */}
         <PortfolioSection
           lang={lang}
           onSelectService={handleSelectService}
         />
 
-        {/* 5. Interactive Price Bundle Calculator with Currency */}
+        {/* 6. Smart Service Cost Calculator with Dual Pricing Modes (Estimate & Custom Quote) */}
         <PriceCalculator
           lang={lang}
           services={services}
           currency={currency}
         />
 
-        {/* 6. How We Work (4 Simple Steps) */}
+        {/* 7. How the Project Process Works (4 Seamless Steps) */}
         <ProcessSection lang={lang} />
 
-        {/* 7. Client Reviews & WhatsApp Endorsements */}
-        <TestimonialsSection lang={lang} />
-
-        {/* 8. Direct Order Form Section with Dynamic Service Questions */}
-        <OrderFormSection
-          lang={lang}
-          services={services}
-          selectedServiceId={selectedServiceId}
-          onSelectService={handleSelectService}
-          currency={currency}
-        />
-
-        {/* 9. Real-Time Order Tracker */}
-        <OrderTracker lang={lang} />
-
-        {/* 10. FAQ Accordion */}
+        {/* 8. Frequently Asked Questions */}
         <FAQSection lang={lang} />
 
-        {/* 11. Accepted Payment Methods Section (Configurable via settings.json) */}
-        <PaymentMethodsSection lang={lang} />
+        {/* 9. Contact & Instant WhatsApp Consultation */}
+        <ContactWhatsAppSection lang={lang} />
       </main>
 
-      {/* Footer */}
+      {/* Footer Navigation */}
       <Footer lang={lang} />
 
-      {/* Floating WhatsApp on Desktop only */}
+      {/* Floating WhatsApp on Desktop */}
       <FloatingWhatsApp lang={lang} />
 
-      {/* Fixed Sticky Bottom Action Bar on Mobile only */}
+      {/* Fixed Sticky Action Bar on Mobile */}
       <MobileBottomBar lang={lang} />
 
       {/* Exit Intent Consultation Modal */}

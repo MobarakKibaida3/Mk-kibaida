@@ -85,13 +85,16 @@ export async function getOrders(): Promise<Order[]> {
   }
 }
 
-export async function saveOrder(orderData: Omit<Order, 'id' | 'orderCode' | 'createdAt' | 'status'>): Promise<Order> {
+export async function saveOrder(
+  orderData: Omit<Order, 'id' | 'orderCode' | 'createdAt' | 'status'> & { orderCode?: string }
+): Promise<Order> {
   await ensureFilesExist();
   const orders = await getOrders();
   
-  // Generate sequence code e.g. MK-1004
+  // Generate sequence code e.g. MK-1004 or MK-Q1004 for quotation requests
   const nextNumber = 1001 + orders.length;
-  const orderCode = `MK-${nextNumber}`;
+  const defaultPrefix = orderData.requestType === 'quotation_request' ? 'MK-Q' : 'MK-';
+  const orderCode = orderData.orderCode || `${defaultPrefix}${nextNumber}`;
   
   const newOrder: Order = {
     ...orderData,
@@ -107,12 +110,21 @@ export async function saveOrder(orderData: Omit<Order, 'id' | 'orderCode' | 'cre
 }
 
 export async function updateOrderStatus(orderId: string, status: Order['status']): Promise<Order | null> {
+  return updateOrder(orderId, { status });
+}
+
+export async function updateOrder(orderId: string, updates: Partial<Order>): Promise<Order | null> {
   await ensureFilesExist();
   const orders = await getOrders();
   const index = orders.findIndex((o) => o.id === orderId || o.orderCode === orderId);
   if (index === -1) return null;
 
-  orders[index].status = status;
+  orders[index] = {
+    ...orders[index],
+    ...updates,
+    id: orders[index].id, // protect immutable id
+    orderCode: orders[index].orderCode, // protect immutable code
+  };
   await fs.writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2), 'utf-8');
   return orders[index];
 }

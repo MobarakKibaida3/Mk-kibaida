@@ -48,7 +48,7 @@ export function formatPriceWithCurrency(
 }
 
 export function getServiceQuestions(serviceId: string): ServiceQuestion[] {
-  const questionsMap = settingsData.serviceQuestions as Record<string, ServiceQuestion[]>;
+  const questionsMap = (settingsData.serviceQuestions || {}) as unknown as Record<string, ServiceQuestion[]>;
   return questionsMap[serviceId] || questionsMap.default || [];
 }
 

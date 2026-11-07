@@ -1,7 +1,14 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mobarakkibaida.online'),
   title: 'Mobarak Kibaida - Creative Design Services & Store Hub',
   description: 'خدمات تصميم احترافية للمتاجر والهويات البصرية والفيديوهات بالذكاء الاصطناعي مع تحويل فوري لطلبات واتساب.',
   keywords: [
@@ -61,23 +68,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ar" dir="rtl" className="scroll-smooth bg-[#0A0A0A] text-white">
-      <body className="antialiased selection:bg-[#C9A227] selection:text-black min-h-screen bg-[#0A0A0A]" suppressHydrationWarning>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if ('scrollRestoration' in history) {
-                  history.scrollRestoration = 'manual';
-                }
-                if (window.location.hash) {
-                  history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
-                window.scrollTo(0, 0);
-              } catch(e) {}
-            `,
-          }}
-        />
+    <html lang="ar" dir="rtl" className="scroll-smooth bg-[#0A0A0A] text-white w-full max-w-full overflow-x-hidden">
+      <body className="antialiased selection:bg-[#C9A227] selection:text-black min-h-screen bg-[#0A0A0A] w-full max-w-full overflow-x-hidden" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
