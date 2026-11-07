@@ -159,10 +159,10 @@ export const translations = {
       dismiss: 'لا شكراً، سأستكشف الموقع',
     },
     footer: {
-      about: 'استوديو مبارك كبيدة (Mobarak Kibaida) المتخصص في تصميم المتاجر الإلكترونية والهويات البصرية والفيديوهات الإعلانية لرواد الأعمال في الشرق الأوسط.',
+      about: 'استوديو مبارك كبيدة (MobarakKibaida) المتخصص في تصميم المتاجر الإلكترونية والهويات البصرية وحلول الذكاء الاصطناعي لرواد الأعمال في الشرق الأوسط والعالم.',
       quickLinks: 'روابط سريعة',
       contactInfo: 'بيانات التواصل',
-      copyright: 'جميع الحقوق محفوظة © 2026 Mobarak Kibaida. صُمم بحب وفخامة.',
+      copyright: 'جميع الحقوق محفوظة © 2026 MobarakKibaida. صُمم بحب وفخامة.',
     },
     admin: {
       title: 'لوحة إدارة طلبات مبارك كبيدة',
@@ -334,13 +334,13 @@ export const translations = {
       dismiss: 'No thanks, continue browsing',
     },
     footer: {
-      about: 'Mobarak Kibaida Creative Studio — crafting bespoke e-commerce storefronts, brand identities, and high-impact commercial media for leading MENA brands.',
+      about: 'MobarakKibaida Creative Studio — crafting bespoke e-commerce storefronts, brand identities, and high-impact digital solutions for ambitious brands worldwide.',
       quickLinks: 'Quick Links',
       contactInfo: 'Direct Contact',
-      copyright: 'All rights reserved © 2026 Mobarak Kibaida. Designed with precision and luxury.',
+      copyright: 'All rights reserved © 2026 MobarakKibaida. Designed with precision and luxury.',
     },
     admin: {
-      title: 'Mobarak Kibaida Admin Dashboard',
+      title: 'MobarakKibaida Admin Dashboard',
       enterPass: 'Enter administrative password:',
       passPlaceholder: 'Admin password',
       loginBtn: 'Access Dashboard',

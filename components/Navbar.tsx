@@ -103,7 +103,8 @@ export default function Navbar({
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="flex items-center group cursor-pointer min-w-0 shrink"
+              className="flex items-center group cursor-pointer shrink-0"
+              aria-label="MobarakKibaida"
             >
               <MkLogo size="sm" showSubtitle={false} />
             </a>
@@ -210,8 +211,8 @@ export default function Navbar({
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{lang === 'ar' ? 'القائمة الرئيسية' : 'MAIN NAVIGATION'}</span>
               </span>
-              <span className="text-[11px] text-neutral-500 font-mono">
-                Mobarak Kibaida
+              <span className="text-[11px] text-[#E5C158] font-serif font-bold tracking-wider">
+                MobarakKibaida
               </span>
             </div>
 

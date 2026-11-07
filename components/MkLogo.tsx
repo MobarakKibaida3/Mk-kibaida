@@ -77,15 +77,15 @@ export default function MkLogo({ className = '', size = 'md', showSubtitle = tru
       </div>
 
       {/* Typography Brand Lockup */}
-      <div className="flex flex-col text-start sm:text-right min-w-0">
+      <div className="flex flex-col text-start sm:text-right shrink-0">
         <span
-          className={`font-bold tracking-wider text-white font-serif uppercase truncate max-w-[130px] xs:max-w-none ${textSizes[size]}`}
-          style={{ letterSpacing: '0.06em' }}
+          className={`font-bold tracking-wider text-white font-serif whitespace-nowrap ${textSizes[size]}`}
+          style={{ letterSpacing: '0.04em' }}
         >
-          Mobarak Kibaida
+          MobarakKibaida
         </span>
         {showSubtitle && (
-          <span className="text-[10px] md:text-xs tracking-widest text-[#C9A227] uppercase font-medium truncate max-w-[130px] xs:max-w-none">
+          <span className="text-[9px] sm:text-[10px] md:text-xs tracking-widest text-[#C9A227] uppercase font-medium whitespace-nowrap">
             Creative Design Studio
           </span>
         )}
